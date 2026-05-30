@@ -72,11 +72,10 @@ Job `status` is one of `IN_PROGRESS`, `STOPPING`, `STOPPED`, `FAILED`, `COMPLETE
 
 ### Match the codebase to a scan, then confirm
 
-Agent spaces, pentests, and code reviews are named after the application they target
-(e.g. `JuiceShop`, `Boise`, `TP-Link`). Before asking the user to pick from a raw list,
-make an informed guess about which scan corresponds to *this* repository — the user is
-working in a codebase for a reason, and the relevant findings are almost always for the
-app in front of them.
+Agent spaces, pentests, and code reviews are named after the application they target.
+Before asking the user to pick from a raw list, make an informed guess about which scan
+corresponds to *this* repository — the user is working in a codebase for a reason, and
+the relevant findings are almost always for the app in front of them.
 
 Infer the app identity from the workspace using cheap, high-signal sources:
 
@@ -87,12 +86,12 @@ Infer the app identity from the workspace using cheap, high-signal sources:
 - Distinctive frameworks or domains that match a scan title.
 
 Compare those signals against the agent space / scan names (case-insensitive, allow
-partial and fuzzy matches — `boisestate.ai` in a README maps to a `Boise` agent space).
+partial and fuzzy matches in a README maps to an agent space).
 Then **always confirm before exporting** — present your best guess and your reasoning, and
 let the user correct it:
 
 > "This repo looks like **<product>** (from `<signal>`), which matches the **<name>** agent
-> space. Use that, or pick another? [Boise, School, JuiceShop, ...]"
+> space. Use that, or pick another? [Other Agent Space names, ...]"
 
 If nothing matches with reasonable confidence, say so plainly and show the full list rather
 than forcing a wrong guess. If several scans match, surface the top candidates and ask.
